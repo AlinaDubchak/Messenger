@@ -1,20 +1,29 @@
 import React from 'react';
-
-import { Route, Routes } from 'react-router-dom';
 import { LoginForm, RegisterForm } from 'modules';
 import './Auth.scss';
 
 const Auth = () => {
-  return (
-    <section className='auth'>
-      <div className='auth__content'>
-        <Routes>
-          <Route path='login' element={<LoginForm />} />
-          <Route path='/register' element={<RegisterForm />} />
-        </Routes>
-      </div>
-    </section>
-  );
+  const { pathname } = window.location;
+
+  if (pathname === '/login') {
+    return (
+      <section className='auth'>
+        <div className='auth__content'>
+          <LoginForm />
+        </div>
+      </section>
+    );
+  } else if (pathname === '/register') {
+    return (
+      <section className='auth'>
+        <div className='auth__content'>
+          <RegisterForm />
+        </div>
+      </section>
+    );
+  } else {
+    return null;
+  }
 };
 
 export default Auth;
