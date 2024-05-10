@@ -1,25 +1,37 @@
 import React from 'react';
-import Message from '../../components/Message';
+import { Message } from 'components';
 
 import './Home.scss';
 
-const Home = () => {
-  return (
-    <section className='home'>
-      <Message
-        avatar='https://images.unsplash.com/photo-1716112054546-3027ad687a62?q=80&w=1954&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-        text={'Hello, how are you?'}
-        date='Mon May 20 2024 20:30:31 GMT+0300'
-        isMe={false}
-      />
-      <Message
-        avatar='https://images.unsplash.com/photo-1502310545462-02dcf20e748c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-        text={'Hello!'}
-        date='Mon May 20 2024 18:30:31 GMT+0300'
-        isMe={true}
-      />
-    </section>
-  );
-};
+const Home = () => (
+  <section className='home'>
+    <Message
+      avatar='https://sun1-89.userapi.com/c850424/v850424867/f6869/B-F_i2BilOA.jpg?ava=1'
+      text='Hello! 🌝'
+      date='Sun Apr 21 2019 21:55:29'
+      attachments={[
+        {
+          filename: 'image.jpg',
+          url: 'https://source.unsplash.com/100x100/?random=1&nature,water',
+        },
+        {
+          filename: 'image.jpg',
+          url: 'https://source.unsplash.com/100x100/?random=2&nature,water',
+        },
+        {
+          filename: 'image.jpg',
+          url: 'https://source.unsplash.com/100x100/?random=3&nature,water',
+        },
+      ]}
+    />
+    <Message
+      avatar='https://sun1-89.userapi.com/c850424/v850424867/f6869/B-F_i2BilOA.jpg?ava=1'
+      text='Hello, World!'
+      date='Sun Apr 21 2019 21:59:29'
+      isMe={true}
+      isReaded={false}
+    />
+  </section>
+);
 
 export default Home;
